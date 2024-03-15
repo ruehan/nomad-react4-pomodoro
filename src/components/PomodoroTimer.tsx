@@ -21,10 +21,10 @@ const PomodoroTimer: React.FC = () => {
 
 			setRound(newRound);
 			setGoal(newGoal);
-			setTime(25 * 60);
-
+			// setTime(25 * 60);
+			setTime(10);
+			setIsActive(false);
 			if (newGoal === 12) {
-				setIsActive(false);
 				alert("Congratulations! You've completed 12 goals.");
 			}
 
@@ -36,7 +36,26 @@ const PomodoroTimer: React.FC = () => {
 		};
 	}, [isActive, time, round, goal, setTime, setRound, setGoal]);
 
-	return null;
+	const toggleTimer = () => {
+		setIsActive(!isActive);
+	};
+
+	const formatTime = (time: number) => {
+		const minutes = Math.floor(time / 60);
+		const seconds = time % 60;
+		return `${minutes.toString().padStart(2, "0")}:${seconds
+			.toString()
+			.padStart(2, "0")}`;
+	};
+	return (
+		<div>
+			<h2>Pomodoro Timer</h2>
+			<div>Time: {formatTime(time)}</div>
+			<div>Round: {round}/4</div>
+			<div>Goal: {goal}/12</div>
+			<button onClick={toggleTimer}>{isActive ? "Stop" : "Start"}</button>
+		</div>
+	);
 };
 
 export default PomodoroTimer;
