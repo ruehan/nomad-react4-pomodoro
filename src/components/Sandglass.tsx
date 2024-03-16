@@ -8,10 +8,13 @@ interface SandglassProps {
 
 const SandglassContainer = styled.div`
 	position: relative;
-	width: 200px;
-	height: 400px;
-	border: 2px solid #000;
+	width: 300px;
+	height: 600px;
+	/* width: 100%;
+	height: 100vh; */
+	border: 2px solid black;
 	margin: 20px;
+	background-color: white;
 `;
 
 const SandTop = styled.div<SandglassProps>`
@@ -21,16 +24,15 @@ const SandTop = styled.div<SandglassProps>`
 	height: ${({ currentTime, totalTime }) => (currentTime / totalTime) * 50}%;
 	background-color: #f0e68c;
 	transition: height 1s linear;
-	/* z-index: 20; */
 `;
 
 const SandTopBack1 = styled.div`
 	position: absolute;
 	bottom: 50%;
 	width: 0;
-	border-bottom: 200px solid lightcoral;
+	border-bottom: 300px solid tomato;
 	border-left: 0px solid transparent;
-	border-right: 100px solid transparent;
+	border-right: 150px solid transparent;
 `;
 
 const SandTopBack2 = styled.div`
@@ -38,8 +40,8 @@ const SandTopBack2 = styled.div`
 	bottom: 50%;
 	width: 0;
 	left: 50%;
-	border-bottom: 200px solid lightcoral;
-	border-left: 100px solid transparent;
+	border-bottom: 300px solid tomato;
+	border-left: 150px solid transparent;
 	border-right: 0px solid transparent;
 `;
 
@@ -65,9 +67,9 @@ const SandBottomBack1 = styled.div`
 	position: absolute;
 	top: 50%;
 	width: 0;
-	border-top: 200px solid lightcoral;
+	border-top: 300px solid tomato;
 	border-left: 0px solid transparent;
-	border-right: 100px solid transparent;
+	border-right: 150px solid transparent;
 	z-index: 3;
 `;
 
@@ -76,13 +78,14 @@ const SandBottomBack2 = styled.div`
 	top: 50%;
 	width: 0;
 	left: 50%;
-	border-top: 200px solid lightcoral;
-	border-left: 100px solid transparent;
+	border-top: 300px solid tomato;
+	border-left: 150px solid transparent;
 	border-right: 0px solid transparent;
 	z-index: 3;
 `;
 
 const Sandglass: React.FC<SandglassProps> = ({ currentTime, totalTime }) => {
+	console.log(currentTime / totalTime);
 	return (
 		<SandglassContainer>
 			<SandTop currentTime={currentTime} totalTime={totalTime} />
