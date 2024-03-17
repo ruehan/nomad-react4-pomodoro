@@ -3,6 +3,7 @@ import { atom } from "recoil";
 export const timeState = atom({
 	key: "timeState",
 	default: 25 * 60,
+	// default: 60,
 });
 
 export const roundState = atom({
@@ -12,5 +13,5 @@ export const roundState = atom({
 
 export const goalState = atom({
 	key: "goalState",
-	default: 0,
+	default: 1,
 });
