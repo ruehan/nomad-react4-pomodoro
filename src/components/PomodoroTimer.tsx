@@ -40,7 +40,7 @@ const Container = styled.div`
 
 const CardContainer = styled.div`
 	max-width: 70%;
-	min-width: 40%;
+	/* min-width: 40%; */
 	height: 70%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
