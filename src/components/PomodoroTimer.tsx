@@ -79,7 +79,9 @@ const Label = styled.label`
 	color: white;
 `;
 
-const TimeBar = styled.input<TimeBarProps>`
+const TimeBar = styled.input.attrs<TimeBarProps>((props) => ({
+	disabled: props.isActive,
+}))`
 	width: 100%;
 	height: 20px;
 	color: black;
