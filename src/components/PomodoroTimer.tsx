@@ -22,7 +22,7 @@ const Title = styled.div`
 	color: white;
 	font-size: 60px;
 	position: absolute;
-	top: 50px;
+	top: 20px;
 	left: 50%;
 	transform: translateX(-50%);
 `;
